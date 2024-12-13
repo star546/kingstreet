@@ -94,6 +94,23 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+      .note-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px; /* Space between the "NOTE" label and text */
+}
+
+.note-label {
+    font-weight: bold;
+    color: #ff0000; /* Optional: Highlight the label */
+    white-space: nowrap; /* Prevents wrapping of the "NOTE:" text */
+}
+
+.note-text {
+    flex: 1; /* Allows the text to take up remaining space */
+    text-align: justify; /* Optional: Improves text alignment */
+}
+
     </style>
 </head>
 <body>
@@ -110,10 +127,14 @@
             <button onclick="checkFraud()">Check</button>
             <div id="result" class="result"></div>
         </section>
+<section class="animation">
+    <img src="https://media.istockphoto.com/id/1249714483/vector/money-insurance-concept.jpg?s=612x612&w=0&k=20&c=EOPGuZEbp387JK-HichG4vqNu3G0l-OA1GfEsC-os8A=" alt="Financial Safety Animation">
+    <div class="note-container">
+        <span class="note-label">NOTE:</span>
+        <span class="note-text">A fraud tracker is an essential tool that provides real-time monitoring of financial transactions to protect customers from fraudulent activities. By using advanced algorithms and artificial intelligence, it detects unusual patterns and anomalies, alerting customers immediately to potential threats. This proactive approach helps prevent unauthorized transactions, reducing the risk of financial loss. Quick alerts via SMS, email, or app notifications ensure that customers can verify or block suspicious activities promptly, enhancing security and peace of mind. Additionally, early detection simplifies fraud resolution, saving time and effort. By offering continuous protection and dynamic security updates, fraud trackers build trust in digital financial services and empower customers to manage their finances confidently.</span>
+    </div>
+</section>
 
-        <section class="animation">
-            <img src="assets/mainimage.jpg" alt="Financial Safety Animation">
-        </section>
 
         <div class="links">
             <a href="#">Report Fraud</a>
