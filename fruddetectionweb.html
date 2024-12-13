@@ -97,18 +97,18 @@
       .note-container {
     display: flex;
     align-items: flex-start;
-    gap: 10px; /* Space between the "NOTE" label and text */
+    gap: 10px; 
 }
 
 .note-label {
     font-weight: bold;
-    color: #ff0000; /* Optional: Highlight the label */
-    white-space: nowrap; /* Prevents wrapping of the "NOTE:" text */
+    color: #ff0000; 
+    white-space: nowrap; 
 }
 
 .note-text {
-    flex: 1; /* Allows the text to take up remaining space */
-    text-align: justify; /* Optional: Improves text alignment */
+    flex: 1; 
+    text-align: justify; 
 }
 
     </style>
@@ -149,12 +149,12 @@
             const resultDiv = document.getElementById('result');
 
             if (input === '') {
-                alert('Please enter a value to check.');
+                   alert('Please enter a Phone Number or Transaction ID to check.');
                 return;
             }
 
-            // Simulated fraud detection logic
-            const isFraud = Math.random() > 0.5; // Simulating safe or fraud response
+         
+            const isFraud = Math.random() > 0.5;
 
             resultDiv.style.display = 'block';
             if (isFraud) {
