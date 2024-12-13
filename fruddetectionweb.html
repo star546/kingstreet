@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Fraud Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+        }
+        .form-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .form-section h2 {
+            margin-bottom: 1rem;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-section input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .form-section button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            display: none;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .safe {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .fraud {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .links {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .links a {
+            text-decoration: none;
+            color: #4CAF50;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .animation {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .animation img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Finance Fraud Checker</h1>
+        <p>Ensure your financial transactions are safe!</p>
+    </header>
+
+    <div class="container">
+        <section class="form-section">
+            <h2>Check a Transaction</h2>
+            <label for="phoneNumber">Enter Phone Number or Transaction ID:</label>
+            <input type="text" id="phoneNumber" placeholder="e.g., +1234567890">
+            <button onclick="checkFraud()">Check</button>
+            <div id="result" class="result"></div>
+        </section>
+
+        <section class="animation">
+            <img src="assets/mainimage.jpg" alt="Financial Safety Animation">
+        </section>
+
+        <div class="links">
+            <a href="#">Report Fraud</a>
+            <a href="#">Learn More</a>
+            <a href="#">Contact Support</a>
+        </div>
+    </div>
+
+    <script>
+        function checkFraud() {
+            const input = document.getElementById('phoneNumber').value;
+            const resultDiv = document.getElementById('result');
+
+            if (input === '') {
+                alert('Please enter a value to check.');
+                return;
+            }
+
+            // Simulated fraud detection logic
+            const isFraud = Math.random() > 0.5; // Simulating safe or fraud response
+
+            resultDiv.style.display = 'block';
+            if (isFraud) {
+                resultDiv.className = 'result fraud';
+                resultDiv.textContent = 'Warning! This transaction is flagged as fraudulent.';
+            } else {
+                resultDiv.className = 'result safe';
+                resultDiv.textContent = 'This transaction appears to be safe.';
+            }
+        }
+    </script>
+</body>
+</html>
